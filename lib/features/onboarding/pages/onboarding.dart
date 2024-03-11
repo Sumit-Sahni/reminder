@@ -45,22 +45,36 @@ class _OnBoardingState extends State<OnBoarding> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  GestureDetector(
-                      onTap: null,
-                      child: const Icon(
-                        Ionicons.chevron_forward_circle,
-                        size: 30,
-                        color: AppConst.kLight,
-                      )),
-                  const WidthSpacer(wide: 5.0),
-                  ReusableText(
-                      text: "Skip",
-                      style: appstyle(16, AppConst.kLight, FontWeight.w500)),
+                  Row(
+                    children: [
+                      GestureDetector(
+                          onTap: () {
+                            pageController.nextPage(
+                                duration: const Duration(milliseconds: 600),
+                                curve: Curves.ease);
+                          },
+                          child: const Icon(
+                            Ionicons.chevron_forward_circle,
+                            size: 30,
+                            color: AppConst.kLight,
+                          )),
+                      const WidthSpacer(wide: 5.0),
+                      ReusableText(
+                          text: "Skip",
+                          style:
+                              appstyle(16, AppConst.kLight, FontWeight.w500)),
+                    ],
+                  ),
                   GestureDetector(
                     onTap: null,
                     child: SmoothPageIndicator(
                       controller: pageController,
                       count: 2,
+                      effect: const WormEffect(
+                          dotHeight: 12,
+                          dotWidth: 16,
+                          spacing: 10,
+                          dotColor: AppConst.kYellow),
                     ),
                   )
                 ],

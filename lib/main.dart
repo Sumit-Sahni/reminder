@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:reminder_app/common/utils/constatnt.dart';
-import 'package:reminder_app/features/onboarding/pages/onboarding.dart';
+import 'package:reminder_app/features/todo/pages/homepage.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: true,
             ),
-            home: const OnBoarding(),
+            home: const HomePage(),
           );
         });
   }
