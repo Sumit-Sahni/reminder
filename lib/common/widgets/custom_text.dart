@@ -9,7 +9,7 @@ class CustomTextField extends StatelessWidget {
       required this.hintText,
       this.suffixIcon,
       this.prefixIcon,
-      required this.placeholderStyle,
+      required this.hintstyle,
       required this.controller,
       this.onChanged});
 
@@ -17,7 +17,7 @@ class CustomTextField extends StatelessWidget {
   final String hintText;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
-  final TextStyle placeholderStyle;
+  final TextStyle hintstyle;
   final TextEditingController controller;
   final Function(String)? onChanged;
 
@@ -28,21 +28,24 @@ class CustomTextField extends StatelessWidget {
       decoration: BoxDecoration(
           color: AppConst.kLight,
           borderRadius: BorderRadius.all(Radius.circular(AppConst.kRadius))),
-      child: TextFormField(
-        keyboardType: keyboardType,
-        controller: controller,
-        cursorHeight: 25,
-        onChanged: onChanged,
-        style: appstyle(18, AppConst.kBkDark, FontWeight.bold),
-        decoration: InputDecoration(
-            hintText: hintText,
-            suffixIcon: suffixIcon,
-            prefixIcon: prefixIcon,
-            suffixIconColor: AppConst.kBlueLight,
-            hintStyle: placeholderStyle,
-            errorBorder: const OutlineInputBorder(
-                borderRadius: BorderRadius.zero,
-                borderSide: BorderSide(color: AppConst.kRed))),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: TextFormField(
+          keyboardType: keyboardType,
+          controller: controller,
+          cursorHeight: 25,
+          onChanged: onChanged,
+          style: appstyle(18, AppConst.kBkDark, FontWeight.bold),
+          decoration: InputDecoration(
+              hintText: hintText,
+              suffixIcon: suffixIcon,
+              prefixIcon: prefixIcon,
+              suffixIconColor: AppConst.kBlueLight,
+              hintStyle: hintstyle,
+              errorBorder: const OutlineInputBorder(
+                  borderRadius: BorderRadius.zero,
+                  borderSide: BorderSide(color: AppConst.kRed))),
+        ),
       ),
     );
   }

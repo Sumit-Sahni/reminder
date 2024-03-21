@@ -1,6 +1,5 @@
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:reminder_app/common/utils/constatnt.dart';
@@ -83,8 +82,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                 ),
                 keyboardType: TextInputType.phone,
                 hintText: "Enter phone number",
-                placeholderStyle:
-                    appstyle(16, AppConst.kBkDark, FontWeight.w600),
+                hintstyle: appstyle(16, AppConst.kBkDark, FontWeight.w600),
               )),
 
               // TEXT FIELD
